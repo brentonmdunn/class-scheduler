@@ -4,7 +4,7 @@ import csv
 import requests
 import pandas as pd
 from bs4 import BeautifulSoup
-import constant
+import scrapers.constant as constant
 
 
 file = open(constant.COURSES_CSV)

@@ -5,3 +5,5 @@ Do not have new line at end of `courses.csv`
 moving files: (https://www.learndatasci.com/solutions/python-move-file/)[https://www.learndatasci.com/solutions/python-move-file/]
 
 dump vs dumps: https://www.geeksforgeeks.org/python-difference-between-json-dump-and-json-dumps/
+
+Branch naming rules: `<Feature> or <Bug>/<username>/<small description>

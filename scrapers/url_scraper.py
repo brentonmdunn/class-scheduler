@@ -2,15 +2,22 @@ from bs4 import BeautifulSoup
 import requests
 import re
 from csv import writer
-import constant
+import sys
 
+# sys.path.append('../')
+
+# from scrapers.constant import constant
+
+# Department URL
 url = "http://courses.ucsd.edu/courseList.aspx?name=BILD"
 
 page = requests.get(url)
 
+
 soup = BeautifulSoup(page.content, "html.parser")
 
-file_name = "courses" + "BILD" + ".csv"
+# Need this to change based in dept
+file_name = "csv/courses" + "BILD" + ".csv"
 
 with open(file_name, 'w', encoding='utf8', newline='') as f:
 
