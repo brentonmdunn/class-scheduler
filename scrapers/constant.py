@@ -1,1 +1,1 @@
-COURSES_CSV = "coursesBILD.csv"
+COURSES_CSV = "../csv/courses_BILD.csv"

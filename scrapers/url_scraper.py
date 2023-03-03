@@ -11,13 +11,18 @@ import sys
 # Department URL
 url = "http://courses.ucsd.edu/courseList.aspx?name=BILD"
 
+dept_name_start = url.find("name=")
+
+dept = url[dept_name_start+5:]
+
 page = requests.get(url)
 
 
 soup = BeautifulSoup(page.content, "html.parser")
 
 # Need this to change based in dept
-file_name = "csv/courses" + "BILD" + ".csv"
+# file_name = "csv/courses_" + dept + ".csv"
+file_name = "scrapers/courses_" + dept + ".csv"
 
 with open(file_name, 'w', encoding='utf8', newline='') as f:
 

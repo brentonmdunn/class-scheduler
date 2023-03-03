@@ -4,17 +4,21 @@ import re
 import csv
 from csv import writer
 import pandas as pd
-import scrapers.constant as constant
+# import scrapers.constant as constant
 import json
 import os
 import shutil
+from pathlib import Path
+
+data_folder = Path("../csv/courses_BILD.csv")
+file_to_open = data_folder / "courses_BILD.csv"
 
 
-file = open(constant.COURSES_CSV)
+file = open("courses_BILD.csv")
 url_list = file.readlines()
 
 # Counts the number of lines
-csv_file = pd.read_csv(constant.COURSES_CSV)
+csv_file = pd.read_csv("courses_BILD.csv")
 # idk why I add 1 but it undercounts, maybe 0 indexing?
 number_of_lines = len(csv_file) + 1
 
@@ -321,7 +325,7 @@ with open('coursedata.csv', 'w', encoding='utf8', newline='') as f:
             "discussions": disc_list
         }
 
-        newDirectory = "BILD/" + str(lect_file_name)
+        newDirectory = "scrapers/json/" + str(lect_file_name)
 
         with open(lect_file_name, "w") as outfile:
             json.dump(lect_this_dict, outfile, indent=2)
